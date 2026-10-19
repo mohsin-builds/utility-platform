@@ -1,0 +1,13 @@
+import {strict as assert} from 'node:assert';
+import {crc32, createZip, isPdfHeader,validateDimensions} from '../assets/pack-core.mjs';
+assert.equal(crc32(new TextEncoder().encode('123456789')), 0xcbf43926);
+assert.equal(isPdfHeader(new TextEncoder().encode('%PDF-1.7')), true);
+assert.equal(isPdfHeader(new TextEncoder().encode('NOTPDF')), false);
+assert.throws(()=>validateDimensions(0,531,200));
+assert.throws(()=>validateDimensions(413,531,0));
+validateDimensions(413,531,200);
+const zip=await createZip([{name:'hello.txt',blob:new Blob(['hello world'])}]);
+assert.equal(zip.type,'application/zip');
+const fs = await import('node:fs/promises');
+await fs.writeFile('/tmp/pack-unit.zip',Buffer.from(await zip.arrayBuffer()));
+console.log('Pack validation, CRC32 and ZIP unit checks passed.');
