@@ -43,3 +43,9 @@ The included file tools process user-provided files in the browser; selected fil
 - This is the **single new source repository**. No separate source copies are required for deployment.
 - **Production site:** https://utility-platform.pages.dev/. Do not delete the old Cloudflare project without approval.
 - Domain purchase and final customer-facing brand can be decided later.
+
+## PDF-first upgrade (review branch)
+
+As of 2026-10-20 the review branch now contains 16 PDF/document tools and 25 other utilities. New additions after the initial eight operations: PDF to JPG/PNG, rasterized PDF size reduction (not lossless), crop by crop box, text overlay, image-signature stamp, and extraction of selectable text. Source files are not submitted to a processing API; pdf-lib and pdf.js are loaded from jsDelivr. Real browser output checks remain a release gate.
+
+**Not implemented:** genuine lossless PDF compression, accurate Office conversion, encrypted PDF protection/unlocking, archival PDF/A, permanent redaction, OCR, interactive forms, true digitally signed certificates, high-fidelity PDF editing, AI translation or summarization. Do not advertise these as working.
