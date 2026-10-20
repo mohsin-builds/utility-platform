@@ -1,6 +1,6 @@
 # Utility Platform
 
-A clean, independent source repository for a free, browser-first digital utility platform. The current interface retains our Mohsin Tools design and assets while we build a broader standalone identity.
+A clean, independent source repository for a free, browser-first digital utility platform. This independently branded site uses one source repository and Cloudflare Pages.
 
 ## What's working
 
@@ -8,14 +8,14 @@ A clean, independent source repository for a free, browser-first digital utility
 - **Document Pack Builder workflow:** resize a photo and signature to specified pixel dimensions, check basic file constraints on an existing PDF, and package outputs with a requirements report into a ZIP.
 - Responsive utility directory, tool pages, descriptions, privacy information, sitemap, and security headers.
 
-Some advanced features discussed in the product roadmap (high-fidelity Office conversion, OCR, PDF compression, full AI task interpretation) are **not implemented yet**. Do not advertise them as available.
+Eight additional browser PDF tools are staged on the PDF workbench branch: merge, split, extract, delete, rotate, reorder, watermark and page numbers. They rely on pdf-lib 1.17.1 loaded from jsDelivr, and do not upload PDF bytes. A preview browser end-to-end test is still required before production approval.\n\nSome advanced features discussed in the product roadmap (high-fidelity Office conversion, OCR, PDF compression, full AI task interpretation) are **not implemented yet**. Do not advertise them as available.
 
 ## Development and verification
 
 Requires Node.js 20 or later for the static build; no npm dependency installation is needed.
 
 ```bash
-node tests/workflow-unit.mjs
+node tests/workflow-unit.mjs\nnode tests/pdf-pages.mjs
 node scripts/build.mjs
 python3 -m http.server 8000 --directory dist
 ```
@@ -41,5 +41,5 @@ The included file tools process user-provided files in the browser; selected fil
 ## Project boundaries
 
 - This is the **single new source repository**. No separate source copies are required for deployment.
-- **Existing live site** `https://tools.mohsinlabs.com` should be left operational until the new Cloudflare project and redirects are verified.
+- **Production site:** https://utility-platform.pages.dev/. Do not delete the old Cloudflare project without approval.
 - Domain purchase and final customer-facing brand can be decided later.
