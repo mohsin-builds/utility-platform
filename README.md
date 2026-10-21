@@ -57,3 +57,7 @@ Added five source implementations: fill existing interactive AcroForm fields, fl
 ## Deployment verification
 
 Production builds from the GitHub `main` branch through Cloudflare Pages using `node scripts/build.mjs`, output `dist`. The PDF-first directory includes 46 source tool pages; advanced browser tools still need end-to-end output verification. Some capabilities available on iLovePDF (e.g., high-fidelity Office conversion, secure redaction, encryption and PDF/A) remain unimplemented and must not be advertised as ready.
+
+## Extended image suite (feature branch)
+
+Added six image-tool source implementations: bulk rotate/flip, text watermark, meme creation, selected-area blur/solid cover, brightness/contrast/saturation adjustments, and standard interpolation image enlargement. These are new implementations pending end-to-end browser tests. They are not equivalent to AI background removal, AI photo restoration, or AI super-resolution.
