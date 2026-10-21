@@ -61,3 +61,7 @@ Production builds from the GitHub `main` branch through Cloudflare Pages using `
 ## Extended image suite (feature branch)
 
 Added six image-tool source implementations: bulk rotate/flip, text watermark, meme creation, selected-area blur/solid cover, brightness/contrast/saturation adjustments, and standard interpolation image enlargement. These are new implementations pending end-to-end browser tests. They are not equivalent to AI background removal, AI photo restoration, or AI super-resolution.
+
+## Browser PDF expansion (review branch, 2026-10-22)
+
+Four additional source implementations: visual page organizer, image-to-PDF scan preparation, interactive form field creation, and raster-rebuilt area redaction. These have not passed live browser acceptance testing. Full iLovePDF parity has not been achieved.
