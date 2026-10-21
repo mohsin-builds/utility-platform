@@ -49,3 +49,7 @@ The included file tools process user-provided files in the browser; selected fil
 As of 2026-10-20 the review branch now contains 16 PDF/document tools and 25 other utilities. New additions after the initial eight operations: PDF to JPG/PNG, rasterized PDF size reduction (not lossless), crop by crop box, text overlay, image-signature stamp, and extraction of selectable text. Source files are not submitted to a processing API; pdf-lib and pdf.js are loaded from jsDelivr. Real browser output checks remain a release gate.
 
 **Not implemented:** genuine lossless PDF compression, accurate Office conversion, encrypted PDF protection/unlocking, archival PDF/A, permanent redaction, OCR, interactive forms, true digitally signed certificates, high-fidelity PDF editing, AI translation or summarization. Do not advertise these as working.
+
+## Additional feature branch tools (2026-10-21)
+
+Added five source implementations: fill existing interactive AcroForm fields, flatten form fields, PDF selectable text to basic Markdown, basic text-line comparisons, English scanned PDF OCR to TXT. These are **not verified as production-ready** and require browser tests. Office conversion, protected PDF handling, true redaction and full iLovePDF parity remain unavailable.

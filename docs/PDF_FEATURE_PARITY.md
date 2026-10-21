@@ -32,3 +32,12 @@ This is a product planning inventory, **not a representation that we have featur
 
 ## UX acceptance requirements
 Accessible search/filter, responsive 2–5 column card layout, anchored task categories, predictable upload/process/download flow, keyboard access, explicit privacy & file limits, honest unavailable features, no fake working tool links.
+
+### Additional source implementations 2026-10-21
+
+- AcroForm field filling and flattening, not XFA form creation.
+- PDF to basic Markdown derived from selectable text, not layout fidelity.
+- PDF text-line comparison, not graphical comparison.
+- English image PDF OCR to TXT only, not searchable PDF.
+
+These have source code on the review branch but are not yet confirmed by browser end-to-end tests.
