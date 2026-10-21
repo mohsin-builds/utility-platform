@@ -1,0 +1,16 @@
+
+.ext-board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.ext-page{display:flex;align-items:center;flex-direction:column;min-width:0;gap:10px;padding:11px;border:1px solid #e1e6ef;border-radius:10px;background:#fff}
+.ext-page.removed{opacity:.5;background:#fff1ef}
+.ext-page img{height:125px;max-width:100%;object-fit:contain;box-shadow:0 1px 7px #11223320}
+.ext-page strong{font-size:12px}.ext-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:4px}
+.ext-actions button,.ext-toolbar button,.ext-fields-top button,.ext-form-row button{cursor:pointer;border:1px solid #d8dfe9;background:#fff;border-radius:8px;padding:7px 9px;color:#39475a;font-size:12px}
+.ext-actions button:hover,.ext-toolbar button:hover,.ext-fields-top button:hover,.ext-form-row button:hover{border-color:#ea6047}
+.ext-note{font-size:12px!important;line-height:1.65!important;padding:12px;color:#725849!important;border:1px solid #eadaca;border-radius:10px;background:#fff9f3}
+.ext-fields-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.ext-fields{display:grid;gap:12px}.ext-form-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;background:#f8fafc;border:1px solid #e4e9ee;padding:15px;border-radius:10px}
+.ext-form-row label{display:flex;flex-direction:column;gap:6px;font-weight:700;font-size:12px}.ext-form-row input,.ext-form-row select{width:100%;padding:10px!important}
+.ext-preview{border:1px solid #dae1e9;padding:10px;border-radius:10px;background:#f6f8fa}
+.ext-preview canvas{display:block;max-width:100%;height:auto;touch-action:none;cursor:crosshair;margin:auto}
+.ext-toolbar{display:flex;flex-wrap:wrap;gap:9px}
+@media(max-width:680px){.ext-board{grid-template-columns:repeat(2,minmax(0,1fr))}.ext-form-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
