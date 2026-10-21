@@ -53,3 +53,7 @@ As of 2026-10-20 the review branch now contains 16 PDF/document tools and 25 oth
 ## Additional feature branch tools (2026-10-21)
 
 Added five source implementations: fill existing interactive AcroForm fields, flatten form fields, PDF selectable text to basic Markdown, basic text-line comparisons, English scanned PDF OCR to TXT. These are **not verified as production-ready** and require browser tests. Office conversion, protected PDF handling, true redaction and full iLovePDF parity remain unavailable.
+
+## Deployment verification
+
+Production builds from the GitHub `main` branch through Cloudflare Pages using `node scripts/build.mjs`, output `dist`. The PDF-first directory includes 46 source tool pages; advanced browser tools still need end-to-end output verification. Some capabilities available on iLovePDF (e.g., high-fidelity Office conversion, secure redaction, encryption and PDF/A) remain unimplemented and must not be advertised as ready.
