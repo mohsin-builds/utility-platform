@@ -2,8 +2,9 @@
  * Shared, dependency-free UX layer for all tool pages.
  * Adds discoverable upload, processing, and download steps without changing tool engines.
  */
-const form=document.querySelector('main form');
-if(form){
+const form=document.querySelector('main form')||document.querySelector('main .workbench')||document.querySelector('main .workspace')||document.querySelector('main .tool-panel')||document.querySelector('main');
+const fileInputFound=form?.querySelector('input[type="file"]');
+if(form&&fileInputFound){
  const fileInputs=[...form.querySelectorAll('input[type="file"]')];
  const candidates=['file','files','pdf-files','source-file','ext-source','image-files','file-input','scanned-files','photo','signature'];
  const input=fileInputs.find(el=>candidates.includes(el.id))||fileInputs[0];
@@ -72,6 +73,8 @@ if(form){
  const observer=new MutationObserver(inspect);
  outputs.forEach(node=>observer.observe(node,{childList:true,subtree:true,attributes:true,attributeFilter:['hidden','href']}));
  statuses.forEach(node=>observer.observe(node,{childList:true,subtree:true,attributes:true,attributeFilter:['data-error','class','hidden'],characterData:true}));
+ const processButton=document.querySelector('#process');
  form.addEventListener('submit',()=>{hadSubmit=true;updateStage(2);if(ready)selection.textContent='Working on your file…';},true);
+ if(processButton&&!form.matches('form'))processButton.addEventListener('click',()=>{hadSubmit=true;updateStage(2);if(ready)selection.textContent='Working on your file…';});
  window.addEventListener('pagehide',()=>observer.disconnect(),{once:true});
 }
