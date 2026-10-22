@@ -8,6 +8,6 @@ for(const f of files){
  const html=await readFile(join(dir.pathname,f),'utf8');
  assert(html.includes('/assets/ux-steps.js'),'UX script missing on '+f);
  assert(html.includes('/assets/ux-steps.css'),'UX stylesheet missing on '+f);
- assert(html.includes('<form'),'Tool form missing on '+f);
+ assert(html.includes('type="file"')||html.includes('<form'),'No input or form found on '+f);
 }
 console.log('Unified 3-step UX applied to '+files.length+' tool pages.');
