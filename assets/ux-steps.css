@@ -1,0 +1,15 @@
+/* Unified, accessible 3-step journey on all utility pages. */
+.ux-steps{margin:0 0 21px;padding:17px 18px;border:1px solid #e4e9ee;background:#fafbfd;border-radius:13px;font-family:inherit;box-sizing:border-box}
+.ux-steps-heading{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:13px}
+.ux-steps-heading strong{font-size:13px;font-weight:800;color:#263243}
+.ux-steps-heading span{font-size:11px;color:#6d7a89}
+.ux-step-list{list-style:none!important;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0!important;padding:0!important}
+.ux-step-list li{display:flex;align-items:center;gap:7px;border:1px solid #e7eaef;background:#fff;border-radius:8px;padding:11px 9px;font-size:11px;color:#778292;font-weight:700;line-height:1.3;min-width:0}
+.ux-number{display:grid;place-items:center;flex:none;width:22px;height:22px;background:#eef0f3;border-radius:50%;font-size:11px;color:#657285}
+.ux-step-list li.ux-active{border-color:#e99280;background:#fff4f0;color:#ad3f29}
+.ux-step-list li.ux-active .ux-number{background:#e95f46;color:#fff}
+.ux-step-list li.ux-done .ux-number{background:#d9f3e8;color:#147d53}
+.ux-selection{margin:13px 0 0!important;font-size:12px!important;color:#596779!important;line-height:1.6!important;overflow-wrap:anywhere}
+.ux-upload{border-radius:9px}
+.ux-upload.ux-dragover{outline:2px dashed #e95f46;outline-offset:5px;background:#fff3ef}
+@media(max-width:600px){.ux-steps{padding:12px}.ux-step-list{gap:5px}.ux-step-list li{font-size:10px;padding:8px 6px;gap:5px}.ux-number{width:20px;height:20px}.ux-steps-heading span{font-size:10px}}
