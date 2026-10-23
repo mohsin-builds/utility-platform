@@ -2,3 +2,9 @@ const input=document.getElementById('tool-search'),cards=[...document.querySelec
 // Keep the visible count consistent with actual filter results.
 const stats=document.querySelector('.directory-summary .count-big');if(stats)stats.textContent=String(cards.length);
 for(const a of document.querySelectorAll('.pdf-jump a'))a.addEventListener('click',()=>{const all=filters[0];if(all&&selected!=='all')all.click();});
+
+
+document.querySelector('#hero-search')?.addEventListener('submit',event=>{event.preventDefault();if(input.value.trim())filters[0].click();apply();document.querySelector('#tools')?.scrollIntoView({behavior:'smooth',block:'start'});});
+document.getElementById('focus-search')?.addEventListener('click',()=>{document.getElementById('tool-search')?.focus();document.getElementById('tool-search')?.scrollIntoView({behavior:'smooth',block:'center'});});
+for(const el of document.querySelectorAll('[data-category-go]'))el.addEventListener('click',event=>{const match=filters.find(button=>button.dataset.filter===el.dataset.categoryGo);if(match){event.preventDefault();input.value='';match.click();document.querySelector('#tools')?.scrollIntoView({behavior:'smooth',block:'start'});}});
+for(const a of document.querySelectorAll('.nav-category-menu a'))a.addEventListener('click',()=>{document.querySelector('.nav-categories').open=false;});
